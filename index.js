@@ -26,6 +26,11 @@ app.get('/dogs', (req, res) => {
     res.send("Woof!")
 })
 
+app.get('/search', (req, res) => {
+    const {q} = req.query;
+    res.send(`<h1>Search results for: {q}</h1>`)
+})
+
 app.get('*', (req, res) => {
     res.send(`I don't know that path `)
 })
